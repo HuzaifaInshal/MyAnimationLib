@@ -58,10 +58,10 @@ document.addEventListener("DOMContentLoaded", function() {
             let inIsThere = false
             let outIsThere = true
             classes.forEach((classs)=>{
-                if(classs.includes('In')){
+                if(classs.includes('In') && classs.includes('animate')){
                     inIsThere = true
                 }
-                if(classs.includes('Extra')){
+                if(classs.includes('Extra') && classs.includes('animate')){
                     outIsThere = false
                 }
             });
@@ -70,12 +70,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     var classes = element.classList;
                     classes = Array.from(classes).filter(className => className !== 'animate__animated');
                     classes.forEach((classs)=>{
-                        if(classs.includes('In')){
+                        if(classs.includes('In') && classs.includes('animate')){
                             var afterUnderscore = classs.split("__")[1];
                             element.classList.remove(`ex-animate__${afterUnderscore}`)
                             element.classList.add(`animate__${afterUnderscore}`)
                         }
-                        if(classs.includes('Out')){
+                        if(classs.includes('Out') && classs.includes('animate')){
                             var afterUnderscore = classs.split("__")[1];
                             element.classList.remove(`animate__${afterUnderscore}`)
                             element.classList.add(`ex-animate__${afterUnderscore}`)
@@ -86,12 +86,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     var classes = element.classList;
                     classes = Array.from(classes).filter(className => className !== 'animate__animated');
                     classes.forEach((classs)=>{
-                        if(classs.includes('Out')){
+                        if(classs.includes('Out') && classs.includes('animate')){
                             var afterUnderscore = classs.split("__")[1];
                             element.classList.remove(`ex-animate__${afterUnderscore}`)
                             element.classList.add(`animate__${afterUnderscore}`)
                         }
-                        if(classs.includes('In')){
+                        if(classs.includes('In') && classs.includes('animate')){
                             var afterUnderscore = classs.split("__")[1];
                             element.classList.remove(`animate__${afterUnderscore}`)
                             element.classList.add(`ex-animate__${afterUnderscore}`)
@@ -104,12 +104,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     var classes = element.classList;
                     classes = Array.from(classes).filter(className => className !== 'animate__animated');
                     classes.forEach((classs)=>{
-                        if(classs.includes('In')){
+                        if(classs.includes('In') && classs.includes('animate')){
                             var afterUnderscore = classs.split("__")[1];
                             element.classList.remove(`ex-animate__${afterUnderscore}`)
                             element.classList.add(`animate__${afterUnderscore}`)
                         }
-                        if(classs.includes('Out')){
+                        if(classs.includes('Out') && classs.includes('animate')){
                             var afterUnderscore = classs.split("__")[1];
                             element.classList.remove(`animate__${afterUnderscore}`)
                             element.classList.remove(`animate__Extra`)
@@ -127,6 +127,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             element.classList.remove(`ex-animate__${afterUnderscore}`)
                             element.classList.add(`animate__${afterUnderscore}`)
                             element.classList.remove(`animate__Extra`)
+                            element.classList.remove(`animate__undefined`)
                         }
                     });
                 }
